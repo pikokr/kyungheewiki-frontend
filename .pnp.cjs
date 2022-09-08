@@ -45,7 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:18.2.0"],\
-            ["sass", "npm:1.54.8"],\
+            ["sass", "npm:1.54.9"],\
             ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"]\
           ],\
           "linkType": "SOFT"\
@@ -3256,7 +3256,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:18.2.0"],\
-            ["sass", "npm:1.54.8"],\
+            ["sass", "npm:1.54.9"],\
             ["typescript", "patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=a1c5e5"]\
           ],\
           "linkType": "SOFT"\
@@ -3599,7 +3599,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["postcss", "npm:8.4.14"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:18.2.0"],\
-            ["sass", "npm:1.54.8"],\
+            ["sass", "npm:1.54.9"],\
             ["styled-jsx", "virtual:f5d23c8251c96d4d24a0c0717ba273b04bb374b4e574a4a1c6fb838c33086e9eb425b19ca341970041f1d80d139e48b7554a36bc1c8806512a19d2fe55f0d63c#npm:5.0.4"],\
             ["use-sync-external-store", "virtual:f5d23c8251c96d4d24a0c0717ba273b04bb374b4e574a4a1c6fb838c33086e9eb425b19ca341970041f1d80d139e48b7554a36bc1c8806512a19d2fe55f0d63c#npm:1.2.0"]\
           ],\
@@ -4189,10 +4189,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["sass", [\
-        ["npm:1.54.8", {\
-          "packageLocation": "./.yarn/cache/sass-npm-1.54.8-6582d65f5d-72893b2dc6.zip/node_modules/sass/",\
+        ["npm:1.54.9", {\
+          "packageLocation": "./.yarn/cache/sass-npm-1.54.9-bbfad219c0-90182b5660.zip/node_modules/sass/",\
           "packageDependencies": [\
-            ["sass", "npm:1.54.8"],\
+            ["sass", "npm:1.54.9"],\
             ["chokidar", "npm:3.5.3"],\
             ["immutable", "npm:4.1.0"],\
             ["source-map-js", "npm:1.0.2"]\
