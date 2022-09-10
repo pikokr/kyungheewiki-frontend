@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/styled", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:11.10.4"],\
             ["@trivago/prettier-plugin-sort-imports", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:3.3.0"],\
             ["@types/node", "npm:18.7.14"],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["eslint", "npm:8.23.0"],\
             ["eslint-config-next", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:12.2.5"],\
@@ -518,7 +518,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/utils", "npm:1.2.0"],\
             ["@emotion/weak-memoize", "npm:0.3.0"],\
             ["@types/babel__core", null],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["hoist-non-react-statics", "npm:3.3.2"],\
             ["react", "npm:18.2.0"]\
           ],\
@@ -576,7 +576,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/utils", "npm:1.2.0"],\
             ["@types/babel__core", null],\
             ["@types/emotion__react", null],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -611,7 +611,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/@emotion-use-insertion-effect-with-fallbacks-virtual-9aaaa66ea2/0/cache/@emotion-use-insertion-effect-with-fallbacks-npm-1.0.0-d02a7659c4-4f06a3b482.zip/node_modules/@emotion/use-insertion-effect-with-fallbacks/",\
           "packageDependencies": [\
             ["@emotion/use-insertion-effect-with-fallbacks", "virtual:a2952e830521b473042c8541bcf32919e61b16cfcd46c0ee15e4dadb45d27af0b61e7fa8210b00067c49729be65c2a4255be31272e0713e39a64450ba860e86f#npm:1.0.0"],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -1051,6 +1051,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-react-npm-18.0.18-7a5d9ad98c-6d72d35ab3.zip/node_modules/@types/react/",\
           "packageDependencies": [\
             ["@types/react", "npm:18.0.18"],\
+            ["@types/prop-types", "npm:15.7.5"],\
+            ["@types/scheduler", "npm:0.16.2"],\
+            ["csstype", "npm:3.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:18.0.19", {\
+          "packageLocation": "./.yarn/cache/@types-react-npm-18.0.19-8b04777537-7dc048f9a6.zip/node_modules/@types/react/",\
+          "packageDependencies": [\
+            ["@types/react", "npm:18.0.19"],\
             ["@types/prop-types", "npm:15.7.5"],\
             ["@types/scheduler", "npm:0.16.2"],\
             ["csstype", "npm:3.1.0"]\
@@ -3248,7 +3258,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/styled", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:11.10.4"],\
             ["@trivago/prettier-plugin-sort-imports", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:3.3.0"],\
             ["@types/node", "npm:18.7.14"],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["eslint", "npm:8.23.0"],\
             ["eslint-config-next", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:12.2.5"],\
@@ -3590,7 +3600,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@swc/helpers", "npm:0.4.3"],\
             ["@types/fibers", null],\
             ["@types/node-sass", null],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/sass", null],\
             ["caniuse-lite", "npm:1.0.30001388"],\
@@ -4021,7 +4031,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/react-dom-virtual-ba144e283b/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
           "packageDependencies": [\
             ["react-dom", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:18.2.0"],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["loose-envify", "npm:1.4.0"],\
             ["react", "npm:18.2.0"],\
             ["scheduler", "npm:0.23.0"]\
@@ -4451,7 +4461,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@babel/core", null],\
             ["@types/babel-plugin-macros", null],\
             ["@types/babel__core", null],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["babel-plugin-macros", null],\
             ["react", "npm:18.2.0"]\
           ],\
@@ -4704,7 +4714,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/__virtual__/use-sync-external-store-virtual-02951acef8/0/cache/use-sync-external-store-npm-1.2.0-44f75d2564-5c639e0f8d.zip/node_modules/use-sync-external-store/",\
           "packageDependencies": [\
             ["use-sync-external-store", "virtual:f5d23c8251c96d4d24a0c0717ba273b04bb374b4e574a4a1c6fb838c33086e9eb425b19ca341970041f1d80d139e48b7554a36bc1c8806512a19d2fe55f0d63c#npm:1.2.0"],\
-            ["@types/react", "npm:18.0.18"],\
+            ["@types/react", "npm:18.0.19"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
