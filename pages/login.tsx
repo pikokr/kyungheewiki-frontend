@@ -102,6 +102,20 @@ const LoginPage: NextPage = () => {
         <title>Login - KyungheeWiki</title>
       </Head>
       <LoginLayout title="KyungheeWiki">
+        {submitError && (
+          <div
+            css={css`
+              padding: 12px;
+              font-size: 14px;
+              background: #ff4949;
+              border-radius: 8px;
+              color: #fff;
+              margin-bottom: 16px;
+            `}
+          >
+            {submitError}
+          </div>
+        )}
         <form onSubmit={submit}>
           <LoginInput
             icon={<Icon size={24} src={PersonIcon.src} />}
@@ -109,6 +123,7 @@ const LoginPage: NextPage = () => {
             type="text"
             err={errors.email}
             value={email}
+            submitting={submitting}
             onChange={setEmail}
           />
           <div
@@ -122,6 +137,7 @@ const LoginPage: NextPage = () => {
               type="password"
               err={errors.password}
               value={pw}
+              submitting={submitting}
               onChange={setPw}
             />
             <div
@@ -142,7 +158,7 @@ const LoginPage: NextPage = () => {
               margin-top: 12px;
             `}
           >
-            <LoginButton>Login</LoginButton>
+            <LoginButton submitting={submitting}>Login</LoginButton>
           </div>
           <div
             css={css`
