@@ -11,9 +11,9 @@ export const LoginInput: React.FC<{
   return (
     <div
       css={css`
-        padding: 14px 16px;
+        padding: 12px;
         background: #edeff2;
-        border-radius: 15px;
+        border-radius: 8px;
         display: flex;
         gap: 16px;
         align-items: center;
@@ -21,8 +21,8 @@ export const LoginInput: React.FC<{
     >
       <div
         css={{
-          width: 32,
-          height: 32,
+          width: 24,
+          height: 24,
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
@@ -37,7 +37,7 @@ export const LoginInput: React.FC<{
           width: 0;
           border: none;
           background: transparent;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 300;
           &::placeholder {
             color: rgba(0, 0, 0, 0.3);

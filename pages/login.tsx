@@ -23,7 +23,7 @@ const LoginPage: NextPage = () => {
       <LoginLayout title="KyungheeWiki">
         <div>
           <LoginInput
-            icon={<Icon size={32} src={PersonIcon.src} />}
+            icon={<Icon size={24} src={PersonIcon.src} />}
             placeholder="User ID"
             type="text"
             value={id}
@@ -35,7 +35,7 @@ const LoginPage: NextPage = () => {
             `}
           >
             <LoginInput
-              icon={<Icon size={32} src={LockIcon.src} />}
+              icon={<Icon size={24} src={LockIcon.src} />}
               placeholder="Password"
               type="password"
               value={pw}
@@ -46,6 +46,7 @@ const LoginPage: NextPage = () => {
                 text-align: right;
                 font-weight: 300;
                 margin-top: 6px;
+                font-size: 14px;
               `}
             >
               <Link href="/reset">
@@ -65,6 +66,7 @@ const LoginPage: NextPage = () => {
               text-align: center;
               margin-top: 20px;
               font-weight: 300;
+              font-size: 14px;
               color: rgba(0, 0, 0, 0.4);
             `}
           >

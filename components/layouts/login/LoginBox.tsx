@@ -7,9 +7,9 @@ export const LoginBox: React.FC<PropsWithChildren<{ title: string }>> = ({ title
     <div
       css={css`
         background: #fff;
-        border-radius: 24px;
+        border-radius: 16px;
         box-shadow: 3px 3px 40px rgba(0, 0, 0, 0.1);
-        max-width: 440px;
+        max-width: 360px;
         width: 100vw;
 
         @media screen and (max-width: 512px) {
@@ -24,7 +24,7 @@ export const LoginBox: React.FC<PropsWithChildren<{ title: string }>> = ({ title
     >
       <div
         css={css`
-          padding: 48px;
+          padding: 32px;
           width: 100%;
           display: flex;
           flex-direction: column;
@@ -35,32 +35,32 @@ export const LoginBox: React.FC<PropsWithChildren<{ title: string }>> = ({ title
             padding-top: 0;
             padding-bottom: 0;
             min-height: 100vh;
+
+            padding-top: 180px;
           }
         `}
       >
-        <div
-          css={css`
-            font-size: 32px;
-            font-weight: 300;
-            text-align: center;
+        <div>
+          <div
+            css={css`
+              font-size: 28px;
+              font-weight: 300;
+              text-align: center;
+            `}
+          >
+            {title}
+          </div>
+          <div
+            css={css`
+              margin-top: 24px;
 
-            @media screen and (max-width: 512px) {
-              margin-top: 64px;
-            }
-          `}
-        >
-          {title}
-        </div>
-        <div
-          css={css`
-            margin-top: 32px;
-
-            @media screen and (max-width: 512px) {
-              flex-grow: 1;
-            }
-          `}
-        >
-          {children}
+              @media screen and (max-width: 512px) {
+                flex-grow: 1;
+              }
+            `}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>
