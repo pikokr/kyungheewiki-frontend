@@ -12,7 +12,7 @@ import LockIcon from '../icons/lock.svg'
 import PersonIcon from '../icons/person.svg'
 
 const LoginPage: NextPage = () => {
-  const [id, setId] = React.useState('')
+  const [email, setEmail] = React.useState('')
   const [pw, setPw] = React.useState('')
 
   return (
@@ -24,10 +24,10 @@ const LoginPage: NextPage = () => {
         <div>
           <LoginInput
             icon={<Icon size={24} src={PersonIcon.src} />}
-            placeholder="User ID"
+            placeholder="Email"
             type="text"
-            value={id}
-            onChange={setId}
+            value={email}
+            onChange={setEmail}
           />
           <div
             css={css`
