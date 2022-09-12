@@ -73,7 +73,7 @@ const LoginPage: NextPage = () => {
           </div>
           <div
             css={css`
-              margin-top: 12px;
+              margin-top: 22px;
             `}
           >
             <LoginButton>Sign Up</LoginButton>
