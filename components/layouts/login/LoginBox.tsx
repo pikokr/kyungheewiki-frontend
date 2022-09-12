@@ -62,41 +62,6 @@ export const LoginBox: React.FC<PropsWithChildren<{ title: string }>> = ({ title
         >
           {children}
         </div>
-        <div
-          css={css`
-            position: fixed;
-            left: 48px;
-            bottom: 48px;
-            display: flex;
-            gap: 40px;
-            font-size: 18px;
-            font-weight: 300;
-
-            @media screen and (max-width: 512px) {
-              font-size: 16px;
-              position: static;
-              gap: 22px;
-              margin-bottom: 24px;
-            }
-
-            a {
-              color: rgba(0, 0, 0, 0.6);
-              &:hover {
-                color: #000;
-              }
-            }
-          `}
-        >
-          <Link href="/terms">
-            <a>Terms</a>
-          </Link>
-          <Link href="/privacy">
-            <a>Privacy Policy</a>
-          </Link>
-          <Link href="/legal">
-            <a>Legal Notice</a>
-          </Link>
-        </div>
       </div>
     </div>
   )
