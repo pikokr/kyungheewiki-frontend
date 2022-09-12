@@ -12,24 +12,21 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   const [loading, setLoading] = React.useState(true)
-  const [fetching, setFetching] = React.useState(false)
   const [user, setUser] = React.useState<APIUser | null>(null)
 
   React.useMemo(async () => {
     if (typeof window === 'undefined') return
 
-    if (fetching || !loading) return
+    if (!loading) return
 
-    setFetching(true)
     try {
       const user = await fetchCurrentUser()
 
       setUser(user)
     } finally {
       setLoading(false)
-      setFetching(false)
     }
-  }, [fetching, loading])
+  }, [loading])
 
   return (
     <AnimatePresence mode="wait">

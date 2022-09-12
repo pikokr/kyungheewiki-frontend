@@ -3,6 +3,7 @@ import { AxiosError } from 'axios'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Router from 'next/router'
 import React from 'react'
 
 import { LoginLayout } from '../components/layouts/login/LoginLayout'
@@ -12,7 +13,7 @@ import { Icon } from '../components/utils/Icon'
 import LockIcon from '../icons/lock.svg'
 import PersonIcon from '../icons/person.svg'
 import { ErrorCode, api } from '../utils/api'
-import { processLogin } from '../utils/auth'
+import { processLogin, useCurrentUser } from '../utils/auth'
 
 const LoginPage: NextPage = () => {
   const [email, setEmail] = React.useState('')
@@ -23,6 +24,8 @@ const LoginPage: NextPage = () => {
   const [submitting, setSubmitting] = React.useState(false)
 
   const [submitError, setSubmitError] = React.useState('')
+
+  const user = useCurrentUser(false)
 
   const submit = React.useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
@@ -95,6 +98,11 @@ const LoginPage: NextPage = () => {
     },
     [errors, email, pw]
   )
+
+  if (user) {
+    Router.push('/')
+    return <></>
+  }
 
   return (
     <>

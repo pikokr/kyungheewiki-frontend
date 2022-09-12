@@ -3,6 +3,7 @@ import { AxiosError } from 'axios'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Router from 'next/router'
 import React from 'react'
 
 import { LoginLayout } from '../components/layouts/login/LoginLayout'
@@ -15,7 +16,7 @@ import LockIcon from '../icons/lock.svg'
 import MailIcon from '../icons/mail.svg'
 import PersonIcon from '../icons/person.svg'
 import { ErrorCode, api } from '../utils/api'
-import { processLogin } from '../utils/auth'
+import { processLogin, useCurrentUser } from '../utils/auth'
 
 const LoginPage: NextPage = () => {
   const [name, setName] = React.useState('')
@@ -134,6 +135,13 @@ const LoginPage: NextPage = () => {
     },
     [errors, email, name, pw, pwConfirm, classCode, classNum]
   )
+
+  const user = useCurrentUser(false)
+
+  if (user) {
+    Router.push('/')
+    return <></>
+  }
 
   return (
     <>

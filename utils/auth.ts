@@ -1,6 +1,7 @@
 import Router from 'next/router'
 import React from 'react'
 
+import { api } from './api'
 import { APIUser } from './types'
 
 export const processLogin = (data: {
@@ -15,14 +16,17 @@ export const processLogin = (data: {
 
 export const AuthContext = React.createContext<APIUser | null>(null)
 
-type useCurrentUserFn =
-  | ((required: true | undefined) => APIUser)
-  | ((required?: false) => APIUser | null)
+type useCurrentUserFn = (() => APIUser) | ((required: false) => APIUser | null)
 
 export const useCurrentUser: useCurrentUserFn = () => {
   return React.useContext(AuthContext)
 }
 
 export const fetchCurrentUser = async (): Promise<APIUser | null> => {
-  return null
+  try {
+    const { data } = await api.get('/me')
+    return data
+  } catch (e) {
+    return null
+  }
 }
