@@ -4,7 +4,7 @@ const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 })
 
-api.interceptors.request.use(async (config) => {
+api.interceptors.request.use((config) => {
   if (localStorage.auth) {
     try {
       const auth = JSON.parse(localStorage.auth)
@@ -21,9 +21,9 @@ api.interceptors.request.use(async (config) => {
     } catch (e) {
       console.warn('Failed to deserialize auth info')
     }
-
-    return config
   }
+
+  return config
 }, Promise.reject)
 
 export { api }
