@@ -4,16 +4,22 @@ const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
 })
 
-api.interceptors.request.use((config) => {
+api.interceptors.request.use(async (config) => {
   if (localStorage.auth) {
     try {
-      const auth = JSON.parse(localStorage.auth)
-
-      let token = auth.accessToken
+      let auth = JSON.parse(localStorage.auth)
 
       if (auth.refreshToken < Date.now() - 10000) {
-        // TODO: refresh
+        const { data } = await axios.post('/auth/refresh', auth, {
+          baseURL: process.env.NEXT_PUBLIC_API_URL,
+        })
+
+        auth = data
+
+        localStorage.auth = JSON.stringify(data)
       }
+
+      const token = auth.accessToken
 
       if (!config.headers) config.headers = {}
 
