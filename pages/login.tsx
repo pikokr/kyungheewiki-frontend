@@ -65,6 +65,8 @@ const LoginPage: NextPage = () => {
         } catch (e) {
           const err = e as AxiosError
           if (err.response?.status !== 400) {
+            console.error(e)
+
             setSubmitError(`${e}`)
             return
           }

@@ -127,6 +127,8 @@ const LoginPage: NextPage = () => {
 
           setSubmitError(`${e}`)
 
+          console.error(e)
+
           return
         }
       } finally {
