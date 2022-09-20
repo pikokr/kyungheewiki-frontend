@@ -66,7 +66,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         </motion.div>
       ) : (
         <AuthContext.Provider value={user}>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            css={css`
+              background: #fff;
+              color: #000;
+            `}
+          >
             <LayoutGroup>
               <AnimatePresence mode="wait">
                 <Component {...pageProps} key={router.route} />
