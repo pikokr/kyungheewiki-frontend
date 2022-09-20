@@ -11,15 +11,13 @@ export const LoginLayout: React.FC<PropsWithChildren<{ title: string }>> = ({
   return (
     <motion.div
       css={css`
-        background: linear-gradient(270deg, #fae8ff 0%, #e2e8f0 49.85%, #ffffff 100%);
-        width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
       `}
     >
       <div
         css={css`
           width: 100%;
-          height: 100%;
+          min-height: 100vh;
           overflow-y: auto;
           overflow-x: hidden;
           display: flex;

@@ -2,10 +2,19 @@ import { css } from '@emotion/react'
 import React, { PropsWithChildren } from 'react'
 
 export const LoginButton: React.FC<
-  PropsWithChildren<{ onClick?: () => void; submitting?: boolean }>
-> = ({ onClick, children, submitting }) => {
+  PropsWithChildren<{
+    onClick?: () => void
+    submitting?: boolean
+    className?: string
+    link?: boolean
+    href?: string
+  }>
+> = ({ onClick, children, submitting, className, link, href }) => {
+  const Component = link ? 'a' : 'button'
   return (
-    <button
+    <Component
+      href={href}
+      className={className}
       type="submit"
       onClick={onClick}
       css={css`
@@ -27,6 +36,10 @@ export const LoginButton: React.FC<
 
         filter: drop-shadow(4px 4px 40px rgba(0, 0, 0, 0.25));
 
+        &:hover {
+          color: #fff;
+        }
+
         ${submitting
           ? css`
               background-color: #6a6aa5;
@@ -39,6 +52,6 @@ export const LoginButton: React.FC<
       `}
     >
       {children}
-    </button>
+    </Component>
   )
 }
