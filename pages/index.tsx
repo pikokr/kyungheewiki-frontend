@@ -59,7 +59,7 @@ const Home: NextPage = () => {
       </div>
       <LoginButton
         link
-        href="/login"
+        href={user ? '/app' : '/login'}
         css={css`
           width: 150px;
           font-weight: 700;
