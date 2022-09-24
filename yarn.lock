@@ -2118,9 +2118,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:7.3.2":
-  version: 7.3.2
-  resolution: "framer-motion@npm:7.3.2"
+"framer-motion@npm:7.3.6":
+  version: 7.3.6
+  resolution: "framer-motion@npm:7.3.6"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": 10.13.1
@@ -2135,7 +2135,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: 357e358a220a39e7aa770a67e86a3366c59c46a5d334cf8602e3a630880d185f47571286650474a4f65c53264791e02b9712688813104070466c01d3e1191163
+  checksum: 05d25701a95347db010e743398a01803f53c2b3fc5cb178b162a6c54271f9a02a6c6f674ac4b72710a5f2230afc0ce135c37daf40d5b3cc1de289c02317bf031
   languageName: node
   linkType: hard
 
@@ -2839,7 +2839,7 @@ __metadata:
     axios: 0.27.2
     eslint: 8.23.0
     eslint-config-next: 12.3.1
-    framer-motion: 7.3.2
+    framer-motion: 7.3.6
     next: 12.3.1
     nextjs-progressbar: 0.0.14
     prettier: 2.7.1
