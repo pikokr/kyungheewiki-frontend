@@ -31,10 +31,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [loading])
 
   React.useEffect(() => {
-    if (inApp && !user) {
+    if (inApp && !user && !loading) {
       router.push('/')
     }
-  }, [inApp, user])
+  }, [inApp, router, user, loading])
 
   return (
     <AnimatePresence mode="wait">
