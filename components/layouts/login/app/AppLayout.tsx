@@ -1,5 +1,6 @@
 import { css } from '@emotion/react'
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 import React, { PropsWithChildren } from 'react'
 import { MdChevronRight } from 'react-icons/md'
 
@@ -70,15 +71,21 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
             <MdChevronRight size={20} />
           </motion.div>
         </AppHeaderButton>
-        <div
-          css={css`
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            font-size: 18px;
-          `}
-        >
-          KyungheeWiki
-        </div>
+        <Link href="/" passHref>
+          <a
+            css={css`
+              font-family: 'Inter', sans-serif;
+              font-weight: 300;
+              font-size: 18px;
+              color: #000;
+              &:hover {
+                color: #000;
+              }
+            `}
+          >
+            KyungheeWiki
+          </a>
+        </Link>
         <div
           css={css`
             flex-grow: 1;
