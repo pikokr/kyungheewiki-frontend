@@ -7,7 +7,7 @@ import { LoginButton } from '../components/layouts/login/login/LoginButton'
 import { logout, useCurrentUser } from '../utils/auth'
 
 const Home: NextPage = () => {
-  const user = useCurrentUser(false)
+  const user = useCurrentUser()
 
   return (
     <motion.div

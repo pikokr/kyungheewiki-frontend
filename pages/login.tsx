@@ -25,7 +25,7 @@ const LoginPage: NextPage = () => {
 
   const [submitError, setSubmitError] = React.useState('')
 
-  const user = useCurrentUser(false)
+  const user = useCurrentUser()
 
   const submit = React.useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {

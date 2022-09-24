@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import React from 'react'
 
+import { AppLayout } from '../components/layouts/login/app/AppLayout'
 import '../styles/globals.scss'
 import { AuthContext, fetchCurrentUser } from '../utils/auth'
 import { APIUser } from '../utils/types'
@@ -92,8 +93,14 @@ function MyApp({ Component, pageProps }: AppProps) {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
+                      css={css`
+                        height: 100%;
+                        width: 100%;
+                      `}
                     >
-                      <Component {...pageProps} key={router.route} />
+                      <AppLayout>
+                        <Component {...pageProps} key={router.route} />
+                      </AppLayout>
                     </motion.div>
                   ) : (
                     <></>

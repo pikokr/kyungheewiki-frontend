@@ -138,7 +138,7 @@ const LoginPage: NextPage = () => {
     [errors, email, name, pw, pwConfirm, classCode, classNum]
   )
 
-  const user = useCurrentUser(false)
+  const user = useCurrentUser()
 
   if (user) {
     Router.push('/')

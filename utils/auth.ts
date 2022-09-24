@@ -16,7 +16,7 @@ export const processLogin = (data: {
 
 export const AuthContext = React.createContext<APIUser | null>(null)
 
-type useCurrentUserFn = (() => APIUser) | ((required: false) => APIUser | null)
+type useCurrentUserFn = () => APIUser | null
 
 export const useCurrentUser: useCurrentUserFn = () => {
   return React.useContext(AuthContext)
