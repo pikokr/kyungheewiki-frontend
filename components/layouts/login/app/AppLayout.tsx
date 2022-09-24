@@ -4,6 +4,7 @@ import React, { PropsWithChildren } from 'react'
 import { MdChevronRight } from 'react-icons/md'
 
 import { AppHeaderButton } from './AppHeaderButton'
+import { AppSidebar } from './AppSidebar'
 import { AuthMenu } from './AuthMenu'
 
 export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
@@ -137,9 +138,10 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
               background: #fff;
               height: 100%;
               width: 240px;
+              overflow-y: auto;
             `}
           >
-            Sidebar
+            <AppSidebar />
           </div>
         </motion.div>
         <div
