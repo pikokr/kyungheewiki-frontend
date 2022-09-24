@@ -4,10 +4,11 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 
 import { LoginButton } from '../components/layouts/login/login/LoginButton'
-import { logout, useCurrentUser } from '../utils/auth'
+import { useCurrentUser, useLogout } from '../utils/auth'
 
 const Home: NextPage = () => {
   const user = useCurrentUser()
+  const logout = useLogout()
 
   return (
     <motion.div

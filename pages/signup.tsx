@@ -16,9 +16,11 @@ import LockIcon from '../icons/lock.svg'
 import MailIcon from '../icons/mail.svg'
 import PersonIcon from '../icons/person.svg'
 import { ErrorCode, api } from '../utils/api'
-import { processLogin, useCurrentUser } from '../utils/auth'
+import { useCurrentUser, useLogin } from '../utils/auth'
 
 const LoginPage: NextPage = () => {
+  const processLogin = useLogin()
+
   const [name, setName] = React.useState('')
   const [email, setEmail] = React.useState('')
   const [pw, setPw] = React.useState('')

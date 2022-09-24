@@ -1,19 +1,28 @@
 import { css } from '@emotion/react'
-import { AnimatePresence, AnimateSharedLayout, LayoutGroup, motion } from 'framer-motion'
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import React from 'react'
+import { RecoilRoot, useRecoilState } from 'recoil'
 
+import { userAtom } from '../atoms'
 import { AppLayout } from '../components/layouts/login/app/AppLayout'
 import '../styles/globals.scss'
-import { AuthContext, fetchCurrentUser } from '../utils/auth'
-import { APIUser } from '../utils/types'
+import { fetchCurrentUser } from '../utils/auth'
+
+function MyAppWrapper(props: AppProps) {
+  return (
+    <RecoilRoot>
+      <MyApp {...props} />
+    </RecoilRoot>
+  )
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
   const [loading, setLoading] = React.useState(true)
-  const [user, setUser] = React.useState<APIUser | null>(null)
+  const [user, setUser] = useRecoilState(userAtom)
 
   const inApp = router.pathname.startsWith('/app')
 
@@ -29,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     } finally {
       setLoading(false)
     }
-  }, [loading])
+  }, [loading, setUser])
 
   React.useEffect(() => {
     if (inApp && !user && !loading) {
@@ -74,47 +83,45 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
         </motion.div>
       ) : (
-        <AuthContext.Provider value={user}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            css={css`
-              background: linear-gradient(270deg, #fae8ff 0%, #e2e8f0 49.85%, #ffffff 100%);
-              width: 100vw;
-              height: 100vh;
-              overflow-y: auto;
-            `}
-          >
-            <LayoutGroup>
-              <AnimatePresence mode="wait">
-                {inApp ? (
-                  user ? (
-                    <motion.div
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      css={css`
-                        height: 100%;
-                        width: 100%;
-                      `}
-                    >
-                      <AppLayout>
-                        <Component {...pageProps} key={router.route} />
-                      </AppLayout>
-                    </motion.div>
-                  ) : (
-                    <></>
-                  )
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          css={css`
+            background: linear-gradient(270deg, #fae8ff 0%, #e2e8f0 49.85%, #ffffff 100%);
+            width: 100vw;
+            height: 100vh;
+            overflow-y: auto;
+          `}
+        >
+          <LayoutGroup>
+            <AnimatePresence mode="wait">
+              {inApp ? (
+                user ? (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    css={css`
+                      height: 100%;
+                      width: 100%;
+                    `}
+                  >
+                    <AppLayout>
+                      <Component {...pageProps} key={router.route} />
+                    </AppLayout>
+                  </motion.div>
                 ) : (
-                  <Component {...pageProps} key={router.route} />
-                )}
-              </AnimatePresence>
-            </LayoutGroup>
-          </motion.div>
-        </AuthContext.Provider>
+                  <></>
+                )
+              ) : (
+                <Component {...pageProps} key={router.route} />
+              )}
+            </AnimatePresence>
+          </LayoutGroup>
+        </motion.div>
       )}
     </AnimatePresence>
   )
 }
 
-export default MyApp
+export default MyAppWrapper

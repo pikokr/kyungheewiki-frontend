@@ -13,11 +13,13 @@ import { Icon } from '../components/utils/Icon'
 import LockIcon from '../icons/lock.svg'
 import PersonIcon from '../icons/person.svg'
 import { ErrorCode, api } from '../utils/api'
-import { processLogin, useCurrentUser } from '../utils/auth'
+import { useCurrentUser, useLogin } from '../utils/auth'
 
 const LoginPage: NextPage = () => {
   const [email, setEmail] = React.useState('')
   const [pw, setPw] = React.useState('')
+
+  const processLogin = useLogin()
 
   const [errors, setErrors] = React.useState<Record<string, string>>({})
 
@@ -61,7 +63,7 @@ const LoginPage: NextPage = () => {
             password: pw,
           })
 
-          processLogin(data)
+          await processLogin(data)
         } catch (e) {
           const err = e as AxiosError
           if (err.response?.status !== 400) {
@@ -98,7 +100,7 @@ const LoginPage: NextPage = () => {
         setSubmitting(false)
       }
     },
-    [errors, email, pw]
+    [errors, email, pw, processLogin]
   )
 
   if (user) {

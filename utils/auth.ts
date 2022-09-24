@@ -1,25 +1,27 @@
 import Router from 'next/router'
 import React from 'react'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 
+import { userAtom } from '../atoms'
 import { api } from './api'
 import { APIUser } from './types'
 
-export const processLogin = (data: {
-  accessToken: string
-  refreshToken: string
-  expiresAt: number
-}) => {
-  localStorage.auth = JSON.stringify(data)
+export const useLogin = () => {
+  const setCurrentUser = useSetRecoilState(userAtom)
 
-  Router.push('/').then()
+  return async (data: { accessToken: string; refreshToken: string; expiresAt: number }) => {
+    localStorage.auth = JSON.stringify(data)
+
+    await Router.push('/')
+
+    setCurrentUser(await fetchCurrentUser())
+  }
 }
-
-export const AuthContext = React.createContext<APIUser | null>(null)
 
 type useCurrentUserFn = () => APIUser | null
 
 export const useCurrentUser: useCurrentUserFn = () => {
-  return React.useContext(AuthContext)
+  return useRecoilValue(userAtom)
 }
 
 export const fetchCurrentUser = async (): Promise<APIUser | null> => {
@@ -31,8 +33,9 @@ export const fetchCurrentUser = async (): Promise<APIUser | null> => {
   }
 }
 
-export const logout = async () => {
-  delete localStorage.auth
-  await Router.push('/')
-  window.location.reload()
+export const useLogout = () => {
+  return async () => {
+    delete localStorage.auth
+    window.location.href = '/'
+  }
 }
