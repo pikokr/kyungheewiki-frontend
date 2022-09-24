@@ -137,7 +137,7 @@ const LoginPage: NextPage = () => {
         setSubmitting(false)
       }
     },
-    [errors, email, name, pw, pwConfirm, classCode, classNum]
+    [errors, email, name, pw, pwConfirm, classCode, classNum, processLogin]
   )
 
   const user = useCurrentUser()
