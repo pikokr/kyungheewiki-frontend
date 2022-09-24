@@ -8,15 +8,19 @@ import { AuthMenu } from './AuthMenu'
 
 export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = React.useState(true)
+  const [sidebarReady, setSidebarReady] = React.useState(false)
 
   React.useEffect(() => {
     if (localStorage.openSidebar) setSidebarOpen(true)
+    else setSidebarOpen(false)
+    setSidebarReady(true)
   }, [])
 
   React.useEffect(() => {
+    if (!sidebarReady) return
     if (sidebarOpen) localStorage.openSidebar = 1
     else delete localStorage.openSidebar
-  }, [sidebarOpen])
+  }, [sidebarOpen, sidebarReady])
 
   return (
     <div
@@ -144,26 +148,47 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
             height: 100%;
             width: 0;
             overflow-y: hidden;
+            min-height: 100%;
           `}
         >
           <div
             css={css`
               width: 100%;
               padding: 0 24px;
+              min-height: 100%;
+
+              @media (max-width: 768px) {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+              }
             `}
           >
             <div
               css={css`
                 margin-top: 24px;
 
-                background: #f00;
                 width: 100%;
                 max-width: 960px;
                 margin-left: auto;
                 margin-right: auto;
+                background: #fff;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                padding: 24px;
+                border-radius: 12px;
+
+                @media (max-width: 768px) {
+                  min-height: 100%;
+                  border-radius: 0;
+                  border: none;
+
+                  margin-top: 0;
+
+                  flex-grow: 1;
+                }
               `}
             >
-              Content
+              {children}
             </div>
           </div>
         </div>
