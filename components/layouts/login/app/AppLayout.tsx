@@ -11,58 +11,68 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
         width: 100%;
 
         display: flex;
+        flex-direction: column;
       `}
     >
       <div
         css={css`
-          border-right: 1px solid rgba(0, 0, 0, 0.2);
           background: #fff;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+          padding: 8px;
+          display: flex;
         `}
       >
-        Sidebar
+        hi
+        <div
+          css={css`
+            flex-grow: 1;
+          `}
+        />
+        <AuthMenu />
       </div>
+
       <div
         css={css`
+          display: flex;
           flex-grow: 1;
-          height: 100%;
-          width: 0;
-          overflow-y: hidden;
+          height: 0;
         `}
       >
         <div
           css={css`
+            border-right: 1px solid rgba(0, 0, 0, 0.2);
             background: #fff;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-            padding: 8px;
-            display: flex;
           `}
         >
-          hi
-          <div
-            css={css`
-              flex-grow: 1;
-            `}
-          />
-          <AuthMenu />
+          Sidebar
         </div>
         <div
           css={css`
-            width: 100%;
-            padding: 0 24px;
+            flex-grow: 1;
+            height: 100%;
+            width: 0;
+            overflow-y: hidden;
           `}
         >
           <div
             css={css`
-              margin-top: 24px;
-
-              background: #f00;
               width: 100%;
-              max-width: 960px;
-              margin-left: auto;
-              margin-right: auto;
+              padding: 0 24px;
             `}
           >
-            Content
+            <div
+              css={css`
+                margin-top: 24px;
+
+                background: #f00;
+                width: 100%;
+                max-width: 960px;
+                margin-left: auto;
+                margin-right: auto;
+              `}
+            >
+              Content
+            </div>
           </div>
         </div>
       </div>
