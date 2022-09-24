@@ -14,6 +14,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = React.useState(true)
   const [user, setUser] = React.useState<APIUser | null>(null)
 
+  const inApp = router.pathname.startsWith('/app')
+
   React.useMemo(async () => {
     if (typeof window === 'undefined') return
 
@@ -27,6 +29,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       setLoading(false)
     }
   }, [loading])
+
+  React.useEffect(() => {
+    if (inApp && !user) {
+      router.push('/')
+    }
+  }, [inApp, user])
 
   return (
     <AnimatePresence mode="wait">
@@ -78,7 +86,21 @@ function MyApp({ Component, pageProps }: AppProps) {
           >
             <LayoutGroup>
               <AnimatePresence mode="wait">
-                <Component {...pageProps} key={router.route} />
+                {inApp ? (
+                  user ? (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                    >
+                      <Component {...pageProps} key={router.route} />
+                    </motion.div>
+                  ) : (
+                    <></>
+                  )
+                ) : (
+                  <Component {...pageProps} key={router.route} />
+                )}
               </AnimatePresence>
             </LayoutGroup>
           </motion.div>
