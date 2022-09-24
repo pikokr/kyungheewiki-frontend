@@ -30,3 +30,9 @@ export const fetchCurrentUser = async (): Promise<APIUser | null> => {
     return null
   }
 }
+
+export const logout = async () => {
+  delete localStorage.auth
+  await Router.push('/')
+  window.location.reload()
+}

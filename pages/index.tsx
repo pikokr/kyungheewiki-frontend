@@ -4,8 +4,11 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 
 import { LoginButton } from '../components/layouts/login/login/LoginButton'
+import { logout, useCurrentUser } from '../utils/auth'
 
 const Home: NextPage = () => {
+  const user = useCurrentUser(false)
+
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -65,6 +68,87 @@ const Home: NextPage = () => {
       >
         바로가기
       </LoginButton>
+
+      {user && (
+        <motion.div
+          css={css`
+            position: absolute;
+            right: 32px;
+            top: 32px;
+            font-size: 18px;
+            user-select: none;
+
+            .dropdown-button {
+              cursor: pointer;
+            }
+
+            .dropdown-content {
+              visibility: hidden;
+              opacity: 0;
+
+              transition: all ease 0.2s;
+            }
+
+            &:hover {
+              .dropdown-content {
+                visibility: visible;
+                opacity: 1;
+              }
+            }
+          `}
+        >
+          <div className="dropdown-button">
+            {user.name} ({user.class.grade}-{user.class.classNum})
+          </div>
+          <div
+            css={css`
+              position: relative;
+            `}
+            className="dropdown-content"
+          >
+            <div
+              css={css`
+                height: 8px;
+                width: 100%;
+              `}
+            />
+            <div
+              css={css`
+                position: absolute;
+                right: 0;
+                top: 8px;
+
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 5px 5px 30px -10px #000;
+
+                white-space: nowrap;
+
+                overflow: hidden;
+              `}
+            >
+              <div
+                onClick={logout}
+                css={css`
+                  font-size: 16px;
+                  font-weight: 300;
+                  padding: 8px;
+
+                  transition: all ease 0.2s;
+
+                  cursor: pointer;
+
+                  &:hover {
+                    background-color: rgba(0, 0, 0, 0.1);
+                  }
+                `}
+              >
+                로그아웃
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </motion.div>
   )
 }
