@@ -45,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:12.2.5"],\
             ["framer-motion", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:7.3.2"],\
             ["next", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:12.2.5"],\
+            ["nextjs-progressbar", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:0.0.14"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:18.2.0"],\
@@ -3508,6 +3509,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-config-next", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:12.2.5"],\
             ["framer-motion", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:7.3.2"],\
             ["next", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:12.2.5"],\
+            ["nextjs-progressbar", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:0.0.14"],\
             ["prettier", "npm:2.7.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:18.2.0"],\
@@ -3894,6 +3896,34 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["nextjs-progressbar", [\
+        ["npm:0.0.14", {\
+          "packageLocation": "./.yarn/cache/nextjs-progressbar-npm-0.0.14-d861d63ae0-d8a193c5fc.zip/node_modules/nextjs-progressbar/",\
+          "packageDependencies": [\
+            ["nextjs-progressbar", "npm:0.0.14"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:0.0.14", {\
+          "packageLocation": "./.yarn/__virtual__/nextjs-progressbar-virtual-b0a6a83a15/0/cache/nextjs-progressbar-npm-0.0.14-d861d63ae0-d8a193c5fc.zip/node_modules/nextjs-progressbar/",\
+          "packageDependencies": [\
+            ["nextjs-progressbar", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:0.0.14"],\
+            ["@types/next", null],\
+            ["@types/react", "npm:18.0.18"],\
+            ["next", "virtual:4274d5e82c6b17b79295f14d30290d7bb852fa14dbfecea4ba81fa90b1fcaf201810d5bac36863d9476f12acbec3478cb7b2b4cea2ba167e89a5982528d2290b#npm:12.2.5"],\
+            ["nprogress", "npm:0.2.0"],\
+            ["prop-types", "npm:15.8.1"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/next",\
+            "@types/react",\
+            "next",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["node-gyp", [\
         ["npm:9.1.0", {\
           "packageLocation": "./.yarn/unplugged/node-gyp-npm-9.1.0-2091059b31/node_modules/node-gyp/",\
@@ -3950,6 +3980,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["console-control-strings", "npm:1.1.0"],\
             ["gauge", "npm:4.0.4"],\
             ["set-blocking", "npm:2.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["nprogress", [\
+        ["npm:0.2.0", {\
+          "packageLocation": "./.yarn/cache/nprogress-npm-0.2.0-c1c0973624-66b7bec5d5.zip/node_modules/nprogress/",\
+          "packageDependencies": [\
+            ["nprogress", "npm:0.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
