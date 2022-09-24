@@ -1,11 +1,9 @@
 import { css } from '@emotion/react'
 import React, { PropsWithChildren } from 'react'
 
-import { useCurrentUser } from '../../../../utils/auth'
+import { AuthMenu } from './AuthMenu'
 
 export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
-  const user = useCurrentUser()!
-
   return (
     <div
       css={css`
@@ -45,25 +43,7 @@ export const AppLayout: React.FC<PropsWithChildren> = ({ children }) => {
               flex-grow: 1;
             `}
           />
-          <div
-            css={css`
-              &:hover {
-                background: rgba(0, 0, 0, 0.1);
-              }
-              &:active {
-                background: rgba(0, 0, 0, 0.2);
-              }
-
-              cursor: pointer;
-              user-select: none;
-              padding: 2px 6px;
-              border-radius: 4px;
-
-              transition: all ease 0.2s;
-            `}
-          >
-            {user.name}
-          </div>
+          <AuthMenu />
         </div>
         <div
           css={css`
