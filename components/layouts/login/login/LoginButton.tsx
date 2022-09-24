@@ -1,4 +1,5 @@
-import { css } from '@emotion/react'
+import { Interpolation, Theme, css } from '@emotion/react'
+import Link from 'next/link'
 import React, { PropsWithChildren } from 'react'
 
 export const LoginButton: React.FC<
@@ -11,7 +12,8 @@ export const LoginButton: React.FC<
   }>
 > = ({ onClick, children, submitting, className, link, href }) => {
   const Component = link ? 'a' : 'button'
-  return (
+
+  const content = (
     <Component
       href={href}
       className={className}
@@ -54,4 +56,6 @@ export const LoginButton: React.FC<
       {children}
     </Component>
   )
+
+  return link ? <Link href={href!}>{content}</Link> : content
 }

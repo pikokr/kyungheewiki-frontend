@@ -54,19 +54,17 @@ const Home: NextPage = () => {
         당신의 학습에
         <br />한 층 더 업그레이드.
       </div>
-      <Link href="/login">
-        <LoginButton
-          link
-          href="/login"
-          css={css`
-            width: 150px;
-            font-weight: 700;
-            margin-top: 24px;
-          `}
-        >
-          바로가기
-        </LoginButton>
-      </Link>
+      <LoginButton
+        link
+        href="/login"
+        css={css`
+          width: 150px;
+          font-weight: 700;
+          margin-top: 24px;
+        `}
+      >
+        바로가기
+      </LoginButton>
     </motion.div>
   )
 }
