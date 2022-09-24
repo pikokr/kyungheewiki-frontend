@@ -9,4 +9,5 @@ export const DropdownContent = styled(Menu.Items)`
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   overflow: hidden;
+  z-index: 99999;
 ` as typeof Menu['Items']
