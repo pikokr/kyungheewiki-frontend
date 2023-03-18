@@ -2933,7 +2933,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-icons: 4.6.0
-    recoil: 0.7.5
+    recoil: 0.7.7
     sass: 1.55.0
     typescript: 4.8.3
   languageName: unknown
@@ -3727,9 +3727,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"recoil@npm:0.7.5":
-  version: 0.7.5
-  resolution: "recoil@npm:0.7.5"
+"recoil@npm:0.7.7":
+  version: 0.7.7
+  resolution: "recoil@npm:0.7.7"
   dependencies:
     hamt_plus: 1.0.2
   peerDependencies:
@@ -3739,7 +3739,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 19b410cca6839c8b886b91378112e12de3e0393b547211dafcf7a272c1aa2d7af6c09a9ed39fb3e1997abe5f3d6583e3774dc9f9cdda8c36e4cb0be64a1b17ce
+  checksum: 65edecbcb8d2cde89bfd61ec679c200483472a6cd343c33e4e9142b6ce524fb17d1fecc2bfd8c392926aaa8178c81457f165b32abce2a9662f51f98822c0a9cc
   languageName: node
   linkType: hard
 
